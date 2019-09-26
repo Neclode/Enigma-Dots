@@ -24,23 +24,21 @@ function loadJSON() {
     var jsonfile = document.createElement("script");
     jsonfile.type = "text/javascript";
     jsonfile.src = "JSON/" + pkg.theme + ".json";
-
     document.body.appendChild(jsonfile);
 }
 
-var color, emptyColorChoice, keyColor;
+var color, emptyColorChoice, keyColor, emptyColor;
 
 var id = "",
     guessCount = 0,
     correctColor = 0,
     correctPosition = 0,
     answer = [],
-    emptyColor = "rgb(230, 230, 230)",
     colorLineClass = ["color_0", "color_1", "color_2", "color_3", "color_4", "color_5", "color_6"],
-    colorArray = [];
+    colorArray = [],
+    colorChoices = [];
 
-var colorChoices = [],
-    colorChoicesTarget = [document.querySelector(".red_color"), document.querySelector(".orange_color"), document.querySelector(".yellow_color"), document.querySelector(".green_color"), document.querySelector(".blue_color"), document.querySelector(".violet_color")],
+var colorChoicesTarget = [document.querySelector(".red_color"), document.querySelector(".orange_color"), document.querySelector(".yellow_color"), document.querySelector(".green_color"), document.querySelector(".blue_color"), document.querySelector(".violet_color")],
     guessLine = [document.querySelector(".guess_0"), document.querySelector(".guess_1"), document.querySelector(".guess_2"), document.querySelector(".guess_3"), document.querySelector(".guess_4"), document.querySelector(".guess_5"), document.querySelector(".guess_6")],
     hintBox = [document.querySelector(".hint_box_0"), document.querySelector(".hint_box_1"), document.querySelector(".hint_box_2"), document.querySelector(".hint_box_3"), document.querySelector(".hint_box_4"), document.querySelector(".hint_box_5"), document.querySelector(".hint_box_6")],
     txtHint = [document.querySelector(".txt_hint_0"), document.querySelector(".txt_hint_1"), document.querySelector(".txt_hint_2"), document.querySelector(".txt_hint_3"), document.querySelector(".txt_hint_4"), document.querySelector(".txt_hint_5"), document.querySelector(".txt_hint_6")],
@@ -263,6 +261,7 @@ function removeColor(ev) {
         }
     }
     matchBorder();
+    matchBorderColorChoices();
     quantityCheck();
 }
 
@@ -290,7 +289,7 @@ function addColorChoices(background) {
 function quantityCheck() {
     var count = 0;
     for (i = 0; i <= 3; i++) {
-        if (guess[guessCount][i].style.backgroundColor == "" || guess[guessCount][i].style.backgroundColor == emptyColor) {
+        if (window.getComputedStyle(guess[guessCount][i]).backgroundColor == emptyColor) {
             count += 1;
         }
     }

@@ -2,6 +2,7 @@ var detail = document.querySelector(".detail"),
     general = document.querySelector(".general"),
     desc = document.querySelector(".desc"),
     current = document.querySelector(".current"),
+    txtCurrent = document.querySelector(".current_theme p"),
     selectedTheme;
 
 var pkg = {
@@ -28,6 +29,7 @@ function themeCheck() {
 
 function currentTheme() {
     current.innerHTML = pkg.theme;
+    changeColor();
 }
 
 function showDetail(theme) {
@@ -59,4 +61,14 @@ function back() {
     detail.style.display = "none";
     general.style.display = "flex";
     general.style.opacity = "1";
+}
+
+function changeColor() {
+    if (pkg.theme == "light") {
+        txtCurrent.style.color = "black";
+        current.style.color = "black";
+    } else {
+        txtCurrent.style.color = "white";
+        current.style.color = "white";
+    }
 }

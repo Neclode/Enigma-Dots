@@ -1,4 +1,3 @@
-var loade;
 var username = document.querySelector(".username"),
     dimmer = document.querySelector(".fade"),
     inpName = document.querySelector(".inp_name"),
@@ -122,15 +121,18 @@ function themeCheck() {
     var css = document.createElement("link");
     css.type = "text/css";
     css.rel = "stylesheet";
-    css.href = "css/style" + JSON.parse(localStorage.pkg).theme + ".css";
+    css.href = "css/style" + pkg.theme + ".css";
 
     document.head.appendChild(css);
 }
 
-function showapp(){
-    setTimeout(function(){ 
+function showapp() {
+    setTimeout(function() {
+        document.querySelector(".loading_screen").style.opacity = "0";
+        document.querySelector(".loading_screen").style.display = "none";
         document.querySelector(".loadertxt").style.opacity = 0;
-    document.querySelector(".loader").style.display = "none";
-    document.querySelector(".container").style.opacity = 1; 
+        document.querySelector(".loader").style.display = "none";
+        document.querySelector(".container").style.opacity = 1;
     }, 1000);
+
 }

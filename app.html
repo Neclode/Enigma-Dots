@@ -9,7 +9,7 @@
     <meta charset="utf-8">
 </head>
 
-<body onload="createAnswer(); setHeight(); reapplyColorChoices(); themeCheck(); loadJSON()">
+<body onload="createAnswer(); setHeight(); reapplyColorChoices(); themeCheck(); loadJSON();">
     <div class="container">
         <main>
             <div class="message_area">
@@ -20,12 +20,12 @@
                 <p onclick="window.location.href = 'index.html'">home</p>
             </div>
             <div class="color_choice_area">
-                <div class="color_choice red_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
-                <div class="color_choice orange_color" draggable="true" ondragstart="dragStart('new', event)"" ondragover=" allowDropColorChoice(event) ondrop="dropColorChoice(event)"></div>
-                <div class="color_choice yellow_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
-                <div class="color_choice green_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
-                <div class="color_choice blue_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
-                <div class="color_choice violet_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
+                <div class="color_choice red_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)" onclick="removeColor(event)"></div>
+                <div class="color_choice orange_color" draggable="true" ondragstart="dragStart('new', event)"" ondragover=" allowDropColorChoice(event)" ondrop="dropColorChoice(event)" onclick="removeColor(event)"></div>
+                <div class="color_choice yellow_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)" onclick="removeColor(event)"></div>
+                <div class="color_choice green_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)" onclick="removeColor(event)"></div>
+                <div class="color_choice blue_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)" onclick="removeColor(event)"></div>
+                <div class="color_choice violet_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)" onclick="removeColor(event)"></div>
             </div>
             <div class="guess_area">
                 <div class="guess guess_0">
