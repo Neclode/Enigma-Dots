@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enigma Dots Themes</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+
+<body onload="themeCheck(); currentTheme()">
+    <div class="container">
+        <main>
+            <div class="general">
+                <div class="current_theme">
+                    <p>Current Theme</p>
+                    <p class="current"></p>
+                </div>
+                <div class="theme_container">
+                    <div class="themes default_theme" onclick="showDetail('light')">
+                        <p>Light</p>
+                    </div>
+                    <div class="themes dark_theme" onclick="showDetail('dark')">
+                        <p>Dark</p>
+                    </div>
+                </div>
+                <a href="index.html">Home</a>
+            </div>
+            <div class="detail">
+                <div class="img_container">
+                    <img>
+                    <img>
+                    <img>
+                </div>
+                <p class="desc">Light Theme designed by Enigma Dots</p>
+                <button type="button" onclick="applyTheme()">Apply</button>
+                <button type="button" onclick="back()">Back</button>
+            </div>
+        </main>
+    </div>
+    <script type="text/javascript" src="js/theme.js"></script>
+</body>
+
+</html>

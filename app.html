@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/applight.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+
+<body onload="createAnswer(); setHeight(); reapplyColorChoices(); themeCheck(); loadJSON()">
+    <div class="container">
+        <main>
+            <div class="message_area">
+                <p class="txt_message">Let's do this</p>
+            </div>
+            <div class="btn_back">
+                <img src=" img/arrow.svg" onclick="window.location.href = 'index.html'">
+                <p onclick="window.location.href = 'index.html'">home</p>
+            </div>
+            <div class="color_choice_area">
+                <div class="color_choice red_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
+                <div class="color_choice orange_color" draggable="true" ondragstart="dragStart('new', event)"" ondragover=" allowDropColorChoice(event) ondrop="dropColorChoice(event)"></div>
+                <div class="color_choice yellow_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
+                <div class="color_choice green_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
+                <div class="color_choice blue_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
+                <div class="color_choice violet_color" draggable="true" ondragstart="dragStart('new', event)" ondragover="allowDropColorChoice(event)" ondrop="dropColorChoice(event)"></div>
+            </div>
+            <div class="guess_area">
+                <div class="guess guess_0">
+                    <div class="hint_box hint_box_0" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_0"></p>
+                    </div>
+                    <div class="guess_box guess_box_1">
+                        <div class="color color_0 color_0_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_0 color_0_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_0 color_0_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_0 color_0_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+                <div class="guess guess_1">
+                    <div class="hint_box hint_box_1" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_1"></p>
+                    </div>
+                    <div class="guess_box guess_box_1">
+                        <div class="color color_1 color_1_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_1 color_1_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_1 color_1_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_1 color_1_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+                <div class="guess guess_2">
+                    <div class="hint_box hint_box_2" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_2"></p>
+                    </div>
+                    <div class="guess_box guess_box_2">
+                        <div class="color color_2 color_2_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_2 color_2_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_2 color_2_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_2 color_2_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+                <div class="guess guess_3">
+                    <div class="hint_box hint_box_3" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_3"></p>
+                    </div>
+                    <div class="guess_box guess_box_1">
+                        <div class="color color_3 color_3_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_3 color_3_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_3 color_3_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_3 color_3_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+                <div class="guess guess_4">
+                    <div class="hint_box hint_box_4" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_4" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></p>
+                    </div>
+                    <div class="guess_box guess_box_4">
+                        <div class="color color_4 color_4_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_4 color_4_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_4 color_4_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_4 color_4_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+                <div class="guess guess_5">
+                    <div class="hint_box hint_box_5" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_5"></p>
+                    </div>
+                    <div class="guess_box guess_box_1">
+                        <div class="color color_5 color_5_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_5 color_5_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_5 color_5_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_5 color_5_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+                <div class="guess guess_6">
+                    <div class="hint_box hint_box_6" onclick="qualityCheck(event)">
+                        <p class="txt_hint txt_hint_6"></p>
+                    </div>
+                    <div class="guess_box guess_box_1">
+                        <div class="color color_6 color_6_0" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_6 color_6_1" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_6 color_6_2" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                        <div class="color color_6 color_6_3" draggable="true" ondragstart="dragStart('switch', event)" ondragover="allowDrop(event)" ondrop="drop(event)" onclick="removeColor(event)"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section class="result">
+            <div class="dimmer"></div>
+            <img class="rippon" src="img/win.svg">
+            <div class="result_display">
+                <p class="txt_result">
+                    }
+                    |/p>
+            </div>
+            <a href="index.html" class="exit">X</a>
+        </section>
+    </div>
+    <script type="text/javascript" src="js/DragDropTouch.js"></script>
+    <script>
+    var pkg = JSON.parse(localStorage.pkg);
+    if (pkg.mode == "hard") {
+        var scriptChild = document.createElement("script");
+        scriptChild.src = "./js/app_hard.js";
+        document.body.appendChild(scriptChild);
+    } else {
+        var scriptChild = document.createElement("script");
+        scriptChild.src = "./js/app.js";
+        document.body.appendChild(scriptChild);
+    }
+    </script>
+</body>
+
+</html>

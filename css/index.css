@@ -1,0 +1,36 @@
+
+.container {
+   opacity: 0;
+}
+
+.loader {
+    position: absolute;
+    top: -200px;
+    left: 500px;
+    width: 400px;
+    height: 400px;
+    margin: 300px auto;
+    background-color: greenyellow;
+    border-radius: 100%;
+    animation: scaleout 1.0s infinite;
+}
+
+.loadertxt {
+    font-size: 20pt;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+}
+
+@keyframes scaleout {
+    0%{
+        transform:scale(0);
+        transform:scale(0);
+    }
+    
+     100%{
+        transform:scale(1.0);
+        opacity: 0;
+    }
+}
+

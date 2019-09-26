@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enigma Dots</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="showapp();userCheck();themeCheck();">
+    <div class="container">
+        <main>
+            <section class="username">
+                <p>Please enter your name to begin</p>
+                <div class="input_container">
+                    <input type="text" class="inp_name" placeholder="Your name">
+                    <button onclick="changeState('name')">OK</button>
+                </div>
+            </section>
+            <div class="fade"></div>
+            <p class="txt_greeting">Hi <span class="txt_name" onclick="changeState('changeName')"></span>,<br><span class="whatsup">What's up?</span></p>
+            <div class="hero_image">
+            </div>
+            <div class="play_button_container" onclick="window.location.href='app.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.54 290.54">
+                    <defs>
+                        <style>
+                            .pcls-1 {
+                                    fill: #ecbe75;
+                                }
+
+                                .pcls-2 {
+                                    fill: none;
+                                    stroke: #fff;
+                                    stroke-miterlimit: 10;
+                                    stroke-width: 4px;
+                                }
+                            
+                            
+                            </style>
+                    </defs>
+                    <g>
+                        <circle class="pcls-1" cx="145.27" cy="145.27" r="145.27" />
+                        <path class="pcls-2" d="M169.44,136.61,131.1,114.47a10,10,0,0,0-15,8.66V167.4a10,10,0,0,0,15,8.66l38.34-22.13A10,10,0,0,0,169.44,136.61Z" />
+                    </g>
+                </svg>
+                <p>Play</p>
+            </div>
+            <div class="button_row">
+                <div class="button_container">
+                    <div class="setting_option">
+                        <a class="theme" href="theme.html">Theme</a>
+                        <a class="about" href="about.html">About</a>
+                    </div>
+                    <div class="btns">
+                        <div class="buttons btn_setting" onclick="popUpSettings(event)">
+                            <img src="img/setting.svg">
+                        </div>
+                        <p>Setting</p>
+                    </div>
+                </div>
+                <div class="button_container">
+                    <div class="mode_option">
+                        <p class="normal_mode" onclick="changeState('mode', 'normal')">Normal</p>
+                        <p class="hard_mode" onclick="changeState('mode', 'hard')">Advance</p>
+                    </div>
+                    <div class="btns">
+                        <div class="buttons btn_mode" onclick="popUpOps(event)">
+                            <img src="img/mode.svg">
+                        </div>
+                        <p>Mode</p>
+                    </div>
+                </div>
+                <div class="button_container" onclick="window.location.href='tut.html'">
+                    <div class="btns">
+                        <div class="buttons btn_tutorial">
+                            <img src="img/tutorial.svg">
+                        </div>
+                        <p>Tutorial</p>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <div class="loader"></div>
+    <div class="loadertxt">loading....</div>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/DragDropTouch.js"></script>
+</body>
+
+</html>

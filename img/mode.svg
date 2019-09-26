@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.37 29.19">
+    <defs>
+        <style>
+        .mcls-1 {
+            fill: none;
+            stroke: #28ad7e;
+            stroke-miterlimit: 10;
+            stroke-width: 2px;
+        }
+        </style>
+    </defs>
+    <title>Asset 4</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <circle class="mcls-1" cx="14.59" cy="14.59" r="13.59" />
+            <circle class="mcls-1" cx="51.19" cy="14.59" r="13.59" />
+            <circle class="mcls-1" cx="87.78" cy="14.59" r="13.59" />
+        </g>
+    </g>
+</svg>

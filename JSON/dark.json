@@ -1,0 +1,5 @@
+var colorData = '[{"key_color": "rgb(47, 160, 212)", "emptyColorChoice": "rgb(45,45,45)"}]';
+
+color = JSON.parse(colorData);
+emptyColorChoice = color[0].emptyColorChoice;
+keyColor = color[0].key_color;

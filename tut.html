@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enigma Dots</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/tut.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <div class="video_container">
+                <video loop autoplay>
+                    <source src="video/0.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p class="txt_display">The game will randomly chooses 4 colors from the list of 6 provided colors and put them in a random order. <br> <br> Your job is to figure out the 4 colors and the correct spot for each.</p>
+            <div class="prev" onclick="prev()">
+                <img src="img/arrow.svg">
+                <p>HOME</p>
+            </div>
+            <div class="next" onclick="next()">
+                <img src="img/arrowforward.svg">
+                <p>NEXT</p>
+            </div>
+        </main>
+    </div>
+    <script type="text/javascript" src="js/tut.js"></script>
+</body>
